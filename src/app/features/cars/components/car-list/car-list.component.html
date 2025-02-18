@@ -1,1 +1,33 @@
-<p>car-list works!</p>
+<p-table [value]="cars() ?? []" selectionMode="single"
+    [(selection)]="selectedCar" dataKey="id">
+    <ng-template #caption>
+        <div class="flex flex-wrap justify-end">
+            <p-buttongroup>
+                <p-button label="Add" icon="pi pi-plus" [raised]="true"
+                    (onClick)="onAddCar()" size="small"/>
+                <p-button label="Detail" icon="pi pi-eye" [raised]="true"
+                    severity="info"
+                    (onClick)="onDetailCar()" [disabled]="!selectedCar" size="small"/>
+                <p-button label="Delete" icon="pi pi-trash" [raised]="true"
+                    severity="danger"
+                    (onClick)="onDeleteCar()" [disabled]="!selectedCar" size="small"/>
+            </p-buttongroup>
+        </div>
+    </ng-template>
+    <ng-template #header>
+        <tr>
+            <th>Company name</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Price</th>
+        </tr>
+    </ng-template>
+    <ng-template #body let-car>
+        <tr [pSelectableRow]="car">
+            <td>{{car.make}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.year}}</td>
+            <td>{{car.price}}</td>
+        </tr>
+    </ng-template>
+</p-table>
