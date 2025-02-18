@@ -33,7 +33,7 @@ const reducers = createReducer(
     on(CarActions.getCarsSuccess, (state, action) => ({
         ...state,
         isLoading: false,
-        cars: [...state.cars, ...action.cars]
+        cars: [...action.cars]
     })),
     on(CarActions.getCarsFailure, (state, action) => ({
         ...state,
