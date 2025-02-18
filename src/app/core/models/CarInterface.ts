@@ -1,7 +1,10 @@
 import { BaseInterface } from "./BaseInterface";
 
 export interface CarInterface extends BaseInterface {
-    name?: string;
+    make?: string;
     model?: string;
-    year?: number;
+    color?: string;
+    engine?: string;
+    price?: number;
+    year?: Date;
 }
