@@ -1,1 +1,6 @@
-<p>cars-page works!</p>
+
+<app-car-list
+    (add)="addCar()"
+    (edit)="editCar($event)"
+    (delete)="deleteCar($event)">
+</app-car-list>

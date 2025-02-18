@@ -1,1 +1,4 @@
-<p>car-detail-page works!</p>
+<app-car-item [car]="car()"
+    (save)="saveCar($event)"
+    (back)="redirectToList()">
+</app-car-item>
