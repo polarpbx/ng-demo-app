@@ -1,8 +1,8 @@
 <form [formGroup]="carForm" (submit)="onSubmit()">
 
-    <div class="flex flex-wrap justify-end">
+    <div class="flex flex-wrap" style="justify-content: end;">
         <p-buttongroup>
-            <p-button label="Submit" icon="pi pi-plus" [raised]="true"
+            <p-button label="Save" icon="pi pi-plus" [raised]="true"
                 type="submit" [disabled]="carForm.invalid" size="small" />
             <p-button label="Back" icon="pi pi-trash" [raised]="true"
                 severity="danger"
@@ -11,43 +11,47 @@
     </div>
 
     @if(carForm.controls.id.getRawValue()){
-    <p-floatlabel variant="on">
-        <input pInputText id="id" formControlName="id" autocomplete="off" class="w-full" styleClass="w-full"/>
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <input pInputText id="id" formControlName="id" autocomplete="off"
+            class="w-full" styleClass="w-full" />
         <label for="id">ID</label>
     </p-floatlabel>
 
     }
 
-    <p-floatlabel variant="on">
-        <input pInputText id="make" formControlName="make" autocomplete="off" class="w-full" styleClass="w-full"/>
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <input pInputText id="make" formControlName="make" autocomplete="off"
+            class="w-full" styleClass="w-full" />
         <label for="make">Brand</label>
     </p-floatlabel>
 
-    <p-floatlabel variant="on">
-        <input pInputText id="model" formControlName="model" autocomplete="off" class="w-full" styleClass="w-full"/>
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <input pInputText id="model" formControlName="model" autocomplete="off"
+            class="w-full" styleClass="w-full" />
         <label for="model">Model</label>
     </p-floatlabel>
 
-    <p-floatlabel variant="on" class="w-full">
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
         <p-datepicker inputId="year" formControlName="year" showIcon
-            iconDisplay="input" class="w-full" styleClass="w-full"/>
+            iconDisplay="input" class="w-full" styleClass="w-full" />
         <label for="year">Year</label>
     </p-floatlabel>
 
-    <p-floatlabel variant="on">
-        <input pInputText id="color" formControlName="color" autocomplete="off" class="w-full" styleClass="w-full"/>
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <input pInputText id="color" formControlName="color" autocomplete="off"
+            class="w-full" styleClass="w-full" />
         <label for="color">Color</label>
     </p-floatlabel>
 
-    <p-floatlabel variant="on">
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
         <input pInputText id="engine" formControlName="engine"
-            autocomplete="off" class="w-full" styleClass="w-full"/>
+            autocomplete="off" class="w-full" styleClass="w-full" />
         <label for="engine">Engin</label>
     </p-floatlabel>
 
-    <p-floatlabel variant="on">
+    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
         <p-inputnumber inputId="price" formControlName="price" mode="currency"
-            currency="EUR" class="w-full" styleClass="w-full"/>
+            currency="EUR" class="w-full" styleClass="w-full" />
         <label for="price">Price</label>
     </p-floatlabel>
 
