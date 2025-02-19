@@ -1,3 +1,19 @@
+## 🛠️ Local Development (Without Docker)
+For local development, you can run the Angular app directly using npm install and ng serve.
+1. Install Dependencies
+Run the following command to install required packages:
+
+```sh
+npm install
+```
+2. Start the Application
+Run the development server:
+
+```sh
+ng serve
+```
+
+
 ## Angular Docker Deployment 🚀
 This project contains a Dockerized Angular application that can be built and deployed using either Docker or Docker Compose.
 
