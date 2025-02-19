@@ -1,16 +1,20 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarItemComponent } from '@features/cars/components/car-item/car-item.component';
 import { CarInterface } from '@models/CarInterface';
 import { Store } from '@ngrx/store';
 import { getCar, updateCar } from '@store/cars/cars.actions';
-import { carsSelector } from '@store/cars/cars.selectors';
+import { carsSelector, isLoadingSelector } from '@store/cars/cars.selectors';
+import { BlockUIModule } from 'primeng/blockui';
+import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { map } from 'rxjs';
 
 @Component({
   imports: [
-    CarItemComponent
+    CarItemComponent,
+    BlockUIModule,
+    ProgressSpinnerModule
   ],
   templateUrl: './car-detail-page.component.html',
   styleUrl: './car-detail-page.component.scss'
@@ -22,6 +26,7 @@ export class CarDetailPageComponent {
 
   id = this.route.snapshot.paramMap.get('id');
   car = toSignal<CarInterface | undefined>(this.store.select(carsSelector).pipe(map((cars) => cars.find((car) => car.id === this.id))));
+  isLoadingSelector = toSignal<boolean>(this.store.select(isLoadingSelector));
 
   constructor() {
     if (this.id) {
