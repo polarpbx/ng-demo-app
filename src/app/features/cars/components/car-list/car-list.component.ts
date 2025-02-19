@@ -1,5 +1,5 @@
 import { Component, inject, output } from '@angular/core';
-import { DatePipe } from '@angular/common';
+import { DatePipe, CurrencyPipe } from '@angular/common';
 
 import { Store } from '@ngrx/store';
 import { toSignal } from '@angular/core/rxjs-interop';
@@ -15,6 +15,7 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
   selector: 'app-car-list',
   imports: [
     DatePipe,
+    CurrencyPipe,
     TableModule,
     ButtonModule,
     ButtonGroupModule
