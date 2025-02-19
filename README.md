@@ -1,76 +1,63 @@
-# NgDemoApp
+## Angular Docker Deployment 🚀
+This project contains a Dockerized Angular application that can be built and deployed using either Docker or Docker Compose.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+## 🛠️ Build & Run with Docker
+1. Build the Docker Image
+Run the following command to build the image:
 
-## Development server
-
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
-
-
-
-## Docker
-
-1. Build the Docker image with your new configuration:
-
+```sh
 docker build -t ng-demo-app .
+```
 
-2. Run the Docker container:
+2. Run the Docker Container
+Once the image is built, start the container:
 
+```sh
 docker run -p 8080:80 ng-demo-app
+```
 
-or
+> This will expose your Angular app on `http://localhost:8080`.
 
+
+## 📦 Build & Run with Docker Compose
+You can also use Docker Compose to build and run the application.
+
+1. Build the Image
+
+```sh
 docker-compose build
+```
+
+2. Start the Container
+
+```sh
 docker-compose up -d
+```
+
+> Note: The `-d` flag runs the container in detached mode (in the background).
+
+
+## 🌎 Access the Application
+After running either Docker or Docker Compose, open your browser and go to:
+🔗 http://localhost:8080
+
+
+## 🛑 Stop the Container
+To stop the running container:
+
+```sh
+docker stop ng-demo-app
+```
+
+Or if using Docker Compose:
+
+```sh
+docker-compose down
+
+```
+
+
+> 📌 Notes
+> The Dockerfile uses multi-stage builds to optimize the image size.
+> The app is served using Nginx for better performance.
+> Ensure port 8080 is available before running the container.
