@@ -40,7 +40,7 @@ export class CarItemComponent implements OnChanges {
     color: new FormControl('', [Validators.required]),
     engine: new FormControl('', [Validators.required]),
     price: new FormControl(0, [Validators.required, Validators.min(1)]),
-    year: new FormControl(new Date, [Validators.required])
+    year: new FormControl(new Date(), [Validators.required])
   });
 
   onSubmit() {
@@ -63,7 +63,7 @@ export class CarItemComponent implements OnChanges {
 
   populateForm(car: CarInterface) {
     this.carForm.setValue(car as any)
-    this.carForm.get('id')!.disable();
+    this.carForm.get('year')!.setValue(new Date(car.year!));
   }
 
 }

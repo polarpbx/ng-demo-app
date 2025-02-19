@@ -26,7 +26,7 @@
         <tr [pSelectableRow]="car">
             <td>{{car.make}}</td>
             <td>{{car.model}}</td>
-            <td>{{car.year}}</td>
+            <td>{{car.year | date}}</td>
             <td>{{car.price}}</td>
         </tr>
     </ng-template>

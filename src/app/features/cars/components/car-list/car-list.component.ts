@@ -1,4 +1,6 @@
 import { Component, inject, output } from '@angular/core';
+import { DatePipe } from '@angular/common';
+
 import { Store } from '@ngrx/store';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { CarInterface } from '@models/CarInterface';
@@ -12,6 +14,7 @@ import { ButtonGroupModule } from 'primeng/buttongroup';
 @Component({
   selector: 'app-car-list',
   imports: [
+    DatePipe,
     TableModule,
     ButtonModule,
     ButtonGroupModule
