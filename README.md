@@ -72,4 +72,5 @@ docker run -p 8080:80 ng-demo-app
 
 or
 
-You can use docker-compose up -d
+docker-compose build
+docker-compose up -d
