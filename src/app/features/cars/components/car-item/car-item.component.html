@@ -11,48 +11,158 @@
     </div>
 
     @if(carForm.controls.id.getRawValue()){
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <input pInputText id="id" formControlName="id" autocomplete="off"
-            class="w-full" styleClass="w-full" />
-        <label for="id">ID</label>
-    </p-floatlabel>
-
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="id" formControlName="id" autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="id">ID</label>
+        </p-floatlabel>
+    </div>
     }
 
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <input pInputText id="make" formControlName="make" autocomplete="off"
-            class="w-full" styleClass="w-full" />
-        <label for="make">Brand</label>
-    </p-floatlabel>
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="brand" formControlName="brand"
+                autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="brand">Brand*</label>
+        </p-floatlabel>
+        @if(carForm.controls['brand'].invalid &&
+        carForm.controls['brand'].touched &&
+        carForm.controls['brand'].hasError('required')){
+        <p-message severity="error" text="Brand is required."></p-message>
+        }
+    </div>
 
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <input pInputText id="model" formControlName="model" autocomplete="off"
-            class="w-full" styleClass="w-full" />
-        <label for="model">Model</label>
-    </p-floatlabel>
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="model" formControlName="model"
+                autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="model">Model*</label>
+        </p-floatlabel>
+        @if(carForm.controls['model'].invalid &&
+        carForm.controls['model'].touched &&
+        carForm.controls['model'].hasError('required')){
+        <p-message severity="error" text="Model is required."></p-message>
+        }
+    </div>
 
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <p-datepicker inputId="year" formControlName="year" showIcon
-            iconDisplay="input" class="w-full" styleClass="w-full" />
-        <label for="year">Year</label>
-    </p-floatlabel>
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="engine" formControlName="engine"
+                autocomplete="off" class="w-full" styleClass="w-full" />
+            <label for="engine">Engin*</label>
+        </p-floatlabel>
+        @if(carForm.controls['engine'].invalid &&
+        carForm.controls['engine'].touched &&
+        carForm.controls['engine'].hasError('required')){
+        <p-message severity="error" text="Engine is required."></p-message>
+        }
+    </div>
 
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <input pInputText id="color" formControlName="color" autocomplete="off"
-            class="w-full" styleClass="w-full" />
-        <label for="color">Color</label>
-    </p-floatlabel>
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="fuel" formControlName="fuel"
+                autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="fuel">Fuel*</label>
+        </p-floatlabel>
+        @if(carForm.controls['fuel'].invalid &&
+        carForm.controls['fuel'].touched &&
+        carForm.controls['fuel'].hasError('required')){
+        <p-message severity="error" text="Fuel type is required."></p-message>
+        }
+    </div>
 
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <input pInputText id="engine" formControlName="engine"
-            autocomplete="off" class="w-full" styleClass="w-full" />
-        <label for="engine">Engin</label>
-    </p-floatlabel>
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <p-datepicker inputId="year" formControlName="year" showIcon
+                iconDisplay="input" class="w-full" styleClass="w-full" />
+            <label for="year">Year*</label>
+        </p-floatlabel>
+        @if(carForm.controls['year'].invalid &&
+        carForm.controls['year'].touched &&
+        carForm.controls['year'].hasError('required')){
+        <p-message severity="error" text="Year is required."></p-message>
+        }
+    </div>
 
-    <p-floatlabel variant="on" class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
-        <p-inputnumber inputId="price" formControlName="price" mode="currency"
-            currency="EUR" class="w-full" styleClass="w-full" />
-        <label for="price">Price</label>
-    </p-floatlabel>
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <p-inputnumber inputId="price" formControlName="price"
+                mode="currency"
+                currency="EUR" class="w-full" styleClass="w-full" />
+            <label for="price">Price*</label>
+        </p-floatlabel>
+        @if(carForm.controls['price'].invalid &&
+        carForm.controls['price'].touched &&
+        carForm.controls['price'].hasError('required')){
+        <p-message severity="error" text="Price is required."></p-message>
+        }
+        @if(carForm.controls['price'].invalid &&
+        carForm.controls['price'].touched &&
+        carForm.controls['price'].hasError('min')){
+        <p-message severity="error" text="Price must be at least €1."></p-message>
+        }
+    </div>
 
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="bodyType" formControlName="bodyType"
+                autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="bodyType">Body type</label>
+        </p-floatlabel>
+    </div>
+
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="color" formControlName="color"
+                autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="color">Color</label>
+        </p-floatlabel>
+    </div>
+
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <textarea pTextarea id="details" formControlName="details" rows="5"
+                cols="30" style="resize: none" class="h-full w-full"
+                styleClass="w-full"></textarea>
+            <label for="details">Details</label>
+        </p-floatlabel>
+    </div>
+
+    <div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+        <p-floatlabel variant="on">
+            <input pInputText id="imageUrl" formControlName="imageUrl"
+                autocomplete="off"
+                class="w-full" styleClass="w-full" />
+            <label for="imageUrl">Image URL</label>
+        </p-floatlabel>
+    </div>
 </form>
+
+@if(carForm.controls.imageUrl.getRawValue()){
+<div class="m-1 my-5 md:m-3 md:my-5 lg:m-5">
+    <p-image
+        src="{{carForm.controls.imageUrl.getRawValue()}}"
+        [preview]="true" alt="Image" width="250">
+        <ng-template #indicator>
+            <i class="pi pi-search"></i>
+        </ng-template>
+        <ng-template #image>
+            <img
+                src="{{carForm.controls.imageUrl.getRawValue()}}"
+                alt="image" width="250" />
+        </ng-template>
+        <ng-template #preview let-style="style"
+            let-previewCallback="previewCallback">
+            <img
+                src="{{carForm.controls.imageUrl.getRawValue()}}"
+                alt="image" [style]="style" (click)="previewCallback()" />
+        </ng-template>
+    </p-image>
+</div>
+}

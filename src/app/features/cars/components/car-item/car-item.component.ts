@@ -9,6 +9,9 @@ import { FloatLabel } from 'primeng/floatlabel';
 import { ButtonModule } from 'primeng/button';
 import { ButtonGroupModule } from 'primeng/buttongroup';
 import { CarInterface } from '@models/CarInterface';
+import { TextareaModule } from 'primeng/textarea';
+import { ImageModule } from 'primeng/image';
+import { MessageModule } from 'primeng/message';
 
 @Component({
   selector: 'app-car-item',
@@ -21,7 +24,10 @@ import { CarInterface } from '@models/CarInterface';
     InputNumberModule,
     FloatLabel,
     ButtonModule,
-    ButtonGroupModule
+    ButtonGroupModule,
+    TextareaModule,
+    ImageModule,
+    MessageModule,
   ],
   templateUrl: './car-item.component.html',
   styleUrl: './car-item.component.scss'
@@ -35,12 +41,16 @@ export class CarItemComponent implements OnChanges {
 
   public carForm = new FormGroup({
     id: new FormControl({ value: '', disabled: true }),
-    make: new FormControl('', [Validators.required]),
+    brand: new FormControl('', [Validators.required]),
     model: new FormControl('', [Validators.required]),
-    color: new FormControl('', [Validators.required]),
     engine: new FormControl('', [Validators.required]),
     price: new FormControl(0, [Validators.required, Validators.min(1)]),
-    year: new FormControl(new Date(), [Validators.required])
+    year: new FormControl(new Date(), [Validators.required]),
+    fuel: new FormControl('', [Validators.required]),
+    color: new FormControl(''),
+    bodyType: new FormControl(''),
+    details: new FormControl(''),
+    imageUrl: new FormControl(''),
   });
 
   onSubmit() {
